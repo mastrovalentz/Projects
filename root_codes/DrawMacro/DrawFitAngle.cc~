@@ -1,0 +1,15 @@
+void DrawFitAngle(){
+  TCanvas *c=new TCanvas ("c","Dist Angle Canvas",1);
+  c->Divide(2,1);
+
+  c->cd(1);
+  TVirtualPad *c_1 = c->cd(1);
+  c_1->SetLogy();
+  DiffMCAngle2d->Draw();
+
+  c->cd(2);
+  TVirtualPad *c_2 = c->cd(2);
+  c_2->SetLogy();
+  PvMCAngCalc->Draw();
+
+}

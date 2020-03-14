@@ -1,0 +1,14 @@
+Le azioni possibili sono
+-input+ <file_name> se si vuole prendere i dati da fil
+-sim+<n_event> per simulare gli eventi
+-plot+<file> per stampare i dati delle masse su un file root
+-time+<file> per stampare i dati dei tempi su un file root
+-range+<file> indica il file da cui prendere i dati per le masse+
+-trange+<file> indica il file da cui prendere i dati per i tempi
+
+esecuzione completa con dati da file
+./main input data.txt dump plot mass.root time time.root range massRanges trange particleFitters
+
+esecuzione completa con dati simulati
+./main sim 100000 data.txt dump plot mass.root time time.root range massRanges trange particleFitters
+

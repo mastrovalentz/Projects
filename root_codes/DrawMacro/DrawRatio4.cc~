@@ -1,0 +1,7 @@
+void DrawRatio4(char* h1, char* h2){
+  h1->Draw();
+  h2->Draw();
+  
+
+  return;
+}

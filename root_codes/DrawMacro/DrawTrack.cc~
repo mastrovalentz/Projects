@@ -1,0 +1,15 @@
+void DrawTrack(){
+TCanvas *c=new TCanvas ("c","Test Canvas",1);
+c->Divide(2,2);
+
+c->cd(1);
+c->SetLogy();
+svDistance2->Draw();
+
+c->cd(2);
+c->SetLogy();
+MCdist2d->Draw();
+
+c->cd(3);
+DiffMCTrack2d->Draw();
+}

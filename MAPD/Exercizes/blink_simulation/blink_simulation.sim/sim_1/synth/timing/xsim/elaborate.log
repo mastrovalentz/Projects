@@ -1,0 +1,21 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2018.3/bin/unwrapped/lnx64.o/xelab -wto d4f3a8b59dc049629f509e9c2b058c2b --incr --debug typical --relax --mt 8 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot top_sim_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.top_sim xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+INFO: [XSIM 43-3451] SDF backannotation process started with SDF file "top_sim_time_synth.sdf", for root module "top_sim/uut".
+INFO: [XSIM 43-3452] SDF backannotation was successful for SDF file "top_sim_time_synth.sdf", for root module "top_sim/uut".
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package vl.vl_types
+Compiling module xil_defaultlib.glbl
+Compiling module simprims_ver.IBUF
+Compiling module simprims_ver.OBUF
+Compiling module xil_defaultlib.top
+Compiling architecture behavioral of entity xil_defaultlib.top_sim
+Built simulation snapshot top_sim_time_synth

@@ -1,0 +1,48 @@
+#include "RooRealVar.h"
+#include "RooDataSet.h"
+#include "RooGaussian.h"
+#include "TCanvas.h"
+#include "RooPlot.h"
+#include "TAxis.h"
+#include <fstream>
+#include <iostream>
+#include <stdlib.h>
+#include <iomanip>
+
+using namespace RooFit ;
+
+void DrawAllFit( TH1F* histo, double xmin, double xmax){
+
+  RooRealVar x    ( "x"    , "distance", xmin, xmax , "." );
+
+  RooRealVar mean ( "mean", "mean"    , 0   ,     -0.01 ,     0.01  , "." );
+  RooRealVar widt1( "widt1", "Widt1"   , 0.002 , 0.001 , 0.1, "." );
+  RooRealVar widt2( "widt2", "Widt2"   , 0.002 , 0.001 , 0.1, "." );
+
+  RooGaussian    gauss1( "gauss1", "Gaussian 1" , x, mean, widt1 );
+  RooGaussian    gauss2( "gauss2", "Gaussian 2" , x, mean, widt2 );
+ 
+  RooRealVar gfrac( "gfrac", "fraction"   , 0.5 ,   0.0, 1.0  );
+
+  RooDataHist data("data","data",x, Import(*histo)) ;
+  
+  RooAddPdf GaussSum ( "GaussSum", "Gauss 1+2", RooArgList( gauss1, gauss2 ), gfrac  );
+
+
+  TCanvas* can = new TCanvas( "out", "out", 800, 600 );
+  can->SetLeftMargin( 0.15 );
+  can->cd();
+  //x.setBins( 30);
+
+  RooPlot* frame = x.frame() ;
+  data.plotOn(frame) ;
+  GaussSum.fitTo(data) ;
+  GaussSum.plotOn(frame) ;
+  GaussSum.plotOn( frame, Components( "gauss1" ), LineStyle( kDashed ), LineColor( kRed   ) );
+  GaussSum.plotOn( frame, Components( "gauss2" ), LineStyle( kDashed ), LineColor( kGreen ) );
+
+
+
+  frame->Draw();
+    return;
+}

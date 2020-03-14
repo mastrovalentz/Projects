@@ -1,0 +1,12 @@
+Le azioni possibili sono
+-input+ <file_name> se si vuole prendere i dati da fil
+-sim+<n_event> per simulare gli eventi
+-plot+<file> per stampare i dati delle masse su un file root
+-time+<file> per stampare i dati dei tempi su un file root
+
+esecuzione completa con dati da file
+./main input data.txt dump plot mass.root time time.root
+
+esecuzione completa con dati simulati
+./main sim 100000 data.txt dump plot mass.root time time.root
+

@@ -1,0 +1,40 @@
+#include "RooRealVar.h"
+#include "RooDataSet.h"
+#include "RooGaussian.h"
+#include "TCanvas.h"
+#include "RooPlot.h"
+#include "TAxis.h"
+#include <fstream>
+#include <iostream>
+#include <stdlib.h>
+#include <iomanip>
+#include <string>
+using namespace RooFit ;
+
+void DrawEfficiency( TH1F* h11,  TH1F* h21){
+  TH1F *h1=(TH1F*)h11->Clone();
+  TH1F *h2=(TH1F*)h21->Clone();
+
+  TH1F *f=(TH1F*)h1->Clone();
+  int nBin=h1->GetNbinsX();
+  double eff, s;
+  for (int i=1; i<nBin; i++){
+    if (h2->GetBinContent(i)!=0){
+      eff=h1->GetBinContent(i)/h2->GetBinContent(i);
+      s=sqrt(eff*(1-eff)/h2->GetBinContent(i));
+    }
+    else { eff=0; s=0;}
+    
+    f->SetBinContent(i, eff);
+    f->SetBinError  (i, s);
+  }
+  RooRealVar x    ( "x"    , "distance diff", xmin, xmax , "." );
+
+  RooRealVar coef1( "coef1", "Coefficicent 1"  , 0.0, -100.0, 100.0, " " );
+  RooRealVar coef2( "coef2", "Coefficicent 1"  , 0.0,  -10.0,  10.0, " " );
+  RooPolynomial pol2( "plo2", "Polynomial 2", m, RooArgList( coef1, coef2 ) );
+
+  RooDataHist data("data","data",x, Import(*histo)) ;
+
+  
+}

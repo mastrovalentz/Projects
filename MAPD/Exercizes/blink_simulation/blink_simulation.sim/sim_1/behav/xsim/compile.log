@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/student03/projects/hello_world_v1/hello_world_v1.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/student03/projects/blink_simulation/blink_simulation.srcs/sim_1/new/top_sim.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top_sim'

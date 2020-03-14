@@ -1,0 +1,20 @@
+.L DrawFit4.cc
+.L DrawFitPV.cc
+
+DrawFit4  (DiffMCAngle2d, -0.01, 0.01, "Flight Distance: MC vs PV from Angle" , true);
+DrawFit4  (DiffMCTrack2d, -0.01, 0.01, "Flight Distance: MC vs PV from Tracks", true);
+DrawFit4  (DiffMCAllNoBs, -0.01, 0.01, "Flight Distance: MC vs PV Refitted All Track No Bs", true);
+
+DrawFit4  (DiffMCAllTrk , -0.01, 0.01, "Flight Distance: MC vs PV Refitted All Track", true);
+DrawFit4  (DiffMCRCNoBs , -0.01, 0.01, "Flight Distance: MC vs PV Refitted PF No BS" , true);
+DrawFit4  (DiffMCRCOnly , -0.01, 0.01, "Flight Distance: MC vs PV Refitted PF only"  , true);
+DrawFitPV  (PvMCAngCalc, -0.01, 0.01, "PV Distance: MC vs PV from Angle", true);
+DrawFitPV  (PvMCTrkCalc , -0.01, 0.01, "PV Distance: MC vs PV from Tracks", true);
+DrawFitPV  (PvMCAllNoBs , -0.01, 0.01, "PV Distance: MC vs PV Refitted All Track No BS", true);
+DrawFitPV  (PvMCAllTrk , -0.01, 0.01, "PV Distance: MC vs PV Refitted All Track", true);
+DrawFitPV  (PvMCRCNoBs, -0.01, 0.01, "PV Distance: MC vs PV Refitted PF No BS", true);
+DrawFitPV  (PvMCRCOnly, -0.01, 0.01, "PV Distance: MC vs PV Refitted PF only", true);
+
+
+
+

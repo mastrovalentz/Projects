@@ -1,0 +1,4 @@
+#!/bin/sh
+rm -f main
+export CORSOCXX_UTIL=/home/alessandro/Scrivania/università/cxx/esercizi/
+c++ -Wall -I. -I ${CORSOCXX_UTIL} `root-config --cflags` -o main *cc `root-config --libs`

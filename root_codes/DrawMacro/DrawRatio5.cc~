@@ -1,0 +1,19 @@
+oid DrawRatio5(TH1F *h1, TH1f* h2){
+
+  TH1F *f=(TH1F*)h1->Clone();
+  int nBin=h1->GetNbinsX();
+  double e, s;
+  for (int i=1; i<nBin; i++){
+    if (h2->GetBinContent(i)!=0){
+      e=h1->GetBinContent(i)/h2->GetBinContent(i);
+      s=sqrt(e*(1-e)/h2->GetBinContent(i));
+    }
+    else { e=0; s=0;}
+    
+    f->SetBinContent(i, e);
+    f->SetBinError  (i, s);
+  }
+  f->Draw("e");
+  
+  return;
+}

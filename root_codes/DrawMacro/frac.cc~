@@ -1,0 +1,24 @@
+void frac (double binw){
+   double start=MCdist2d->GetXaxis()->FindBin(0.0);
+   double stop =MCdist2d->GetXaxis()->GetLast();
+   
+
+   int N=(stop-start)/binw;
+   double x[N], y[N];
+   double nonzero=0.0;
+   for (int i=0; i<N; i++)
+   {
+     x[i]=i+0.5;
+     double mc_int  =MCdist2d    ->Integral(start+binw*i, start+binw*(i+1));
+     double data_int=svDist2Calc ->Integral(start+binw*i, start+binw*(i+1));
+     if(mc_int!=0) y[i]=data_int/mc_int;
+     else y[i]=0;
+     if (y[i]>0.1) nonzero=x[i];
+   }
+   TGraph* gr = new TGraph(N,x,y);
+   gr->Draw("AC*");
+
+   TF1 *f =new TF1 ("f", "[0]+[1]*exp([2]*x)", 0, nonzero);
+   gr->Fit(f, "R");
+   return;
+}

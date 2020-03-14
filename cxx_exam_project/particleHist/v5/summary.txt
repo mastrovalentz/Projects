@@ -1,0 +1,11 @@
+to compile ./compile
+execution option (./main)
+input +file file di input
+sim + numeber numero di eventi simulati
+dump stampa a schermo
+plot histogramma masse
+time istrogramma tempi
+range + file da i nome del file con gli intervalli delle masse
+trange + file da il nome del file con gli intervalli di tempo
+
+esecuzione già pronta ./exec
