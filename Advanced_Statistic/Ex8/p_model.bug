@@ -1,0 +1,9 @@
+model {
+for (year in 1:N) {
+D[year] ~ dpois(mu[year])
+log(mu[year]) <- b0 + step(year - tau) * b1
+}
+b0 ~ dunif(-5,5)
+b1 ~ dunif(-5,5)
+tau ~ dunif(1,N)
+}
