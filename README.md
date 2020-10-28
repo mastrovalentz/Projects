@@ -10,4 +10,5 @@ The various folders contains:
 - ML contains Machine Learning assignements covering Regression, Classification and Clustering tasks, some tasks have been approached with various methons (SVM, NN...)
 - Comp_Phys_ModA contains some pyhton exercises about the fondamentals of the language and it's application to some physical cases, 
   like in the Monte Carlo notebook
+ - Adv_Stat contains the exercizes and final projects of the Advanced Statistic for Physical Analysis, all the code have been written in the R language
  
