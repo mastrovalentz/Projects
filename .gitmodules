@@ -1,3 +1,6 @@
 [submodule "Adv_Stat_Final_Project"]
 	path = Adv_Stat_Final_Project
 	url = git@github.com:mastrovalentz/Adv_Stat_Final_Project.git
+[submodule "Project_LocpB_plots"]
+	path = Project_LocpB_plots
+	url = git@github.com:pacca4/Project_LocpB_plots.git
